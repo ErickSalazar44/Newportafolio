@@ -1,0 +1,69 @@
+---
+import IconsNav from '../components/IconsNav.astro';
+
+const letterHome = "Frontend";
+const letterHome2 = "Backend";
+
+---
+
+<div class='min-h-screen flex justify-center items-center font-clash w-full'>
+    <div class='w-full'>
+        <p class='font-semibold text-base text-accent scale-up-ver-text'>ERICK JOSEP SALAZAR</p>
+        <h1
+            class='font-homeLetter font-bold text-[86px] leading-[5rem] text-center'
+        >
+            <div class='tracking-wide'>
+                {
+                    letterHome
+                        .split("")
+                        .map((letter, i) => (
+                            <span 
+                                class={`will-change-transform inline-block animate-trackingRight mx-[2px]`}
+                                style={{animationDelay: `calc(0.05 * ${i}s)`}}
+                            >
+                                {letter}
+                            </span>
+                        ))
+                }
+            </div>
+            <div class='tracking-wide'>
+                {
+                    letterHome2
+                        .split("")
+                        .map((letter, i) => (
+                            <spa 
+                                class="will-change-transform inline-block animate-trackingLeft mx-[2px]"
+                                style={{animationDelay: `calc(0.05 * ${i}s)`}}
+                            >
+                                {letter}
+                            </span>
+                        )
+                )}
+            </div>
+        </h1>
+        <div class='flex pt-7 justify-between'>
+            <div class='flex gap-1 overflow-hidden h-12 items-center'>
+                <span
+                    class='flex flex-col gap-4 w-3 animate-Arrow -translate-y-[30%]'
+                >
+                    <img src='/arrow.svg' alt='arrow' />
+                    <img src='/arrow.svg' alt='arrow' />
+                </span>
+                <span
+                    class='flex-col gap-4 w-3 translate-y-[-30%] animate-translate-arrow hidden'
+                >
+                    <img src='/arrow-black.svg' alt='arrow-black' />
+                    <img src='/arrow-black.svg' alt='arrow-black' />
+                </span>
+                <p class='flex flex-col opacity-30 text-sm'>
+                    <span>Seguir</span>
+                    <span>Deslizando</span>
+                </p>
+            </div>
+
+            <div class='flex gap-x-2'>
+                <IconsNav/>
+            </div>
+        </div>
+    </div>
+</div>

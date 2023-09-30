@@ -1,0 +1,68 @@
+---
+interface Props {
+    title: string;
+}
+
+import Navbar from "../components/shared/Navbar.tsx";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='description' content='Astro description' />
+        <meta name='viewport' content='width=device-width' />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <meta name='generator' content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <Navbar client:load />
+        <main class='px-6'>
+            <slot />
+        </main>
+    </body>
+</html>
+<style is:global>
+    @font-face {
+        font-family: "Clash";
+
+        src: url("../fonts/ClashDisplay-Semibold.otf") format("opentype");
+        font-weight: 600;
+
+        src: url("../fonts/ClashDisplay-Medium.otf") format("opentype");
+        font-weight: 500;
+
+        src: url("../fonts/ClashDisplay-Regular.otf") format("opentype");
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: "HomeLetter";
+        src: url("../fonts/HomeLetter-Regular.ttf") format("opentype");
+        font-weight: bold;
+    }
+
+    html {
+        background: #202020;
+        color-scheme: dark light;
+    }
+
+    @keyframes scale-up-ver-text {
+        0% {
+            opacity: 0;
+            transform: translateY(1rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(1);
+        }
+    }
+    .scale-up-ver-text {
+        animation: scale-up-ver-text 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1s both;
+    }
+
+
+</style>
