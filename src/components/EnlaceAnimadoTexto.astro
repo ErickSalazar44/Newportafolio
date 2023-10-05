@@ -1,0 +1,69 @@
+---
+interface Props {
+    text: string
+    textDecoration: boolean
+}
+
+const { text, textDecoration } = Astro.props
+
+const textUpperArray = text.split("");
+
+---
+
+<a href="/" class={`letter__contenedor font-clash ${textDecoration && 'textDecoration'}`}>
+    {textUpperArray.map((letter, i) => (
+        <div class ="inline-block overflow-hidden">
+            <span
+                title={letter}
+                class={`letter transition-transform duration-700`}
+                style={{ transitionDelay: `calc(75 * ${i}ms)` }}
+            >
+                {letter}
+            </span>
+
+            {letter === " " ? <span class="block w-2"></span> : ""}
+        </div>
+    ))}
+</a>
+
+
+<style>
+
+.textDecoration::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: teal;
+    bottom: 0;
+    left: -100%;
+    transition: left 1.2s ease-in-out;
+}
+
+.textDecoration:hover::after {
+    left: 0;
+}
+
+.letter__contenedor {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.letter__contenedor:hover .letter{
+    transform: translateY(-200%);
+}
+
+.letter {
+    position: relative;
+    display: inline-block;
+}
+
+.letter::before {
+    content: attr(title);
+    position: absolute;
+    top: 200%;
+    left: 0;
+}
+
+</style>

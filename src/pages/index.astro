@@ -1,12 +1,15 @@
 ---
 import Home from '../components/Home.astro';
+import HomeContact from '../components/HomeContact.astro';
+import HomePresentacion from '../components/HomePresentacion.astro';
+import HomeWorks from '../components/HomeWorks.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
 	<Home />
-	<section class="min-h-screen">
-
-	</section>
+	<HomePresentacion/>
+	<HomeWorks/>
+	<HomeContact/>
 </Layout>
 

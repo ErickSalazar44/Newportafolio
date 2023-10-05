@@ -1,21 +1,21 @@
 ---
 interface Props {
-    strokeColor: string;
+
     hoverColor: string;
     ruta: string
 }
 
-const { strokeColor, hoverColor, ruta } = Astro.props;
+const { hoverColor, ruta } = Astro.props;
 ---
 
-<a href={ruta}>
+<a href={ruta} class="text-text2 dark:text-textDark2 group-hover:text-text dark:group-hover:text-textDark">
     <svg
-        class={`hover:${hoverColor} transition-colors`}
-        width='32'
-        height='32'
+        class={`hover:${hoverColor} transition-colors p-1`}
+        width='44'
+        height='44'
         viewBox='0 0 24 24'
         stroke-width='1'
-        stroke={strokeColor}
+        stroke='currentColor'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
     >
