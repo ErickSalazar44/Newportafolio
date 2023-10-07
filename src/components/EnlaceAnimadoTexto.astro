@@ -10,7 +10,7 @@ const textUpperArray = text.split("");
 
 ---
 
-<a href="/" class={`letter__contenedor font-clash ${textDecoration && 'textDecoration'}`}>
+<a href="/" class={`letter__contenedor font-clash ${textDecoration && 'textDecoration'} after:bg-accent`}>
     {textUpperArray.map((letter, i) => (
         <div class ="inline-block overflow-hidden">
             <span
@@ -34,7 +34,6 @@ const textUpperArray = text.split("");
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: teal;
     bottom: 0;
     left: -100%;
     transition: left 1.2s ease-in-out;

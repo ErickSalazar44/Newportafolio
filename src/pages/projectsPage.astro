@@ -1,0 +1,17 @@
+---
+import Projects from "../components/Projects.astro";
+import TitleAnimado from "../components/TitleAnimado.astro";
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Proyectos">
+    <div class="pt-24">
+        <header class="text-center pb-5 relative">
+            <h4 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-clashVariable text-text4 dark:text-textDark2 overflow-hidden">
+                <TitleAnimado text="Proyectos" Rigth={true}/>
+            </h4>
+            <span class="absolute -top-3 right-6 font-clash">4</span>
+        </header>
+        <Projects/>
+    </div>
+</Layout>

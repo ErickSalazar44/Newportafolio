@@ -5,18 +5,20 @@ interface Props {
 
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/shared/Navbar.tsx";
+import SwitchDarkMode from "../components/SwitchDarkMode.tsx";
+import Contact from "../components/Contact.astro"
 
 const { title } = Astro.props;
+const { pathname } = Astro.url;
 
 const bgPrincipal = {
     background:
         "radial-gradient(84% 84% at -20% -20%,var(--main-bg) 0%,var(--gradient-1) 100%),radial-gradient(40% 82% at 50% 50%,var(--gradient-2) 0%,var(--gradient-2) 100%),radial-gradient(82% 60% at 34% 10%,var(--main-bg) 0%,var(--gradient-3-start) 46%,var(--gradient-3-end) 72%,var(--main-bg) 90%)",
-    backgroundRepeat: "no-repeat",
 };
 ---
 
 <!doctype html>
-<html lang='en' class=''>
+<html lang='en'>
     <head>
         <meta charset='UTF-8' />
         <meta name='description' content='Astro description' />
@@ -25,18 +27,24 @@ const bgPrincipal = {
         <meta name='generator' content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body
-        class='h-screen sm:px-8 text-primary-100 selection:bg-accent-400 selection:text-accent'
-        style={bgPrincipal}
-    >
+    <body class='h-full dark'>
         <div
-            class='mx-auto max-w-6xl min-h-full bg-contentbackground border-x-[1px] border-bMain dark:border-bMainDark'
+            class='h-screen sm:px-8 text-primary-100 selection:text-accent bg-repeat'
+            style={bgPrincipal}
         >
-            <Navbar client:load />
-            <main class='px-[22px] sm:px-6 lg:px-8 dark:bg-mainDark bg-main'>
-                <slot />
-            </main>
-            <Footer />
+            <div
+                class='mx-auto max-w-6xl min-h-full bg-contentbackground border-x-[1px] border-bMain dark:border-bMainDark'
+            >
+                <Navbar client:load path={pathname}/>
+                <main
+                    class='px-[22px] sm:px-6 lg:px-8 dark:bg-mainDark bg-main1'
+                >
+                    <slot />
+                    <Contact/>
+                </main>
+                <Footer />
+                <SwitchDarkMode client:load />
+            </div>
         </div>
     </body>
 </html>
@@ -46,12 +54,11 @@ const bgPrincipal = {
         --main-bg-1: #0a0a09;
         --gradient-1: rgba(255, 255, 255, 0);
         --gradient-2: #fafafad5;
-        --gradient-3-start: rgba(130, 199, 172, 0.91);
-        --gradient-3-end: hsl(153, 60%, 53%);
-        --text: #fafafad5
+        --gradient-3-start: rgba(66, 240, 173, 0.756);
+        --gradient-3-end: hsl(170, 100%, 50%);
     }
 
-    html {
+    body {
         background: var(--main-bg);
     }
 
@@ -59,6 +66,8 @@ const bgPrincipal = {
         --main-bg: #000;
         --gradient-1: rgba(0, 0, 0, 0);
         --gradient-2: rgba(0, 0, 0, 0.74);
+        --gradient-3-start: rgba(130, 199, 172, 0.91);
+        --gradient-3-end: hsl(153, 60%, 53%);
     }
     @font-face {
         font-family: "Clash";
@@ -81,9 +90,6 @@ const bgPrincipal = {
     @font-face {
         font-family: "DMSans";
         src: url("../fonts/DMSans-Medium.ttf") format("opentype");
-        font-weight: 400;
-
-        src: url("../fonts/DMSans-Regular.ttf") format("opentype");
         font-weight: 500;
     }
 
@@ -100,16 +106,14 @@ const bgPrincipal = {
 
     @keyframes scale-in-center {
         0% {
-            -webkit-transform: scale(0);
             transform: scale(0);
-            opacity: 1;
+            opacity: 0;
         }
         ,
         80% {
             transform: scale(1.1);
         }
         100% {
-            -webkit-transform: scale(1);
             transform: scale(1);
             opacity: 1;
         }

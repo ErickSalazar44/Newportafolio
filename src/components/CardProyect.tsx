@@ -26,14 +26,14 @@ const CardProyect = ({ img, fecha, title, odd }) => {
     return (
         <article className="mt-14 ">
             <a href="/"
-                className={`group aspect-[16/12] bg-cover bg-center bg-no-repeat block relative  w-full sm:w-[420px] md:w-[520px] lg:w-[620px] ${odd ? 'ml-auto' : ''}`}
+                className={`group aspect-[16/12] bg-cover bg-center bg-no-repeat block relative  w-full sm:w-[420px] md:w-[520px] lg:w-[620px] ${odd ? 'ml-auto' : ''}  text-textDark`}
                 style={{ backgroundImage: `url(${img})` }}
                 ref={containerRef}
             >
                 <div
-                    className={`absolute w-full aspect-[16/12] group-hover:bg-black transition  group-hover:opacity-50 duration-300`}
+                    className={`absolute w-full aspect-[16/12] group-hover:bg-black transition  group-hover:opacity-30 duration-300`}
                 ></div>
-                <span className={`opacity-80 sm:text-lg md:text-xl lg:text-2xl absolute -top-8 font-clash sm:top-0 ${odd ? ' sm:-left-20' : 'sm:-right-20'}`}>{fecha}</span>
+                <span className={`text-text4 dark:text-textDark2 opacity-80 sm:text-lg md:text-xl lg:text-2xl absolute -top-8 font-clash sm:top-0 ${odd ? ' sm:-left-20' : 'sm:-right-20'}`}>{fecha}</span>
                 <div className="absolute left-4 bottom-14 sm:left-6 sm:bottom-16 md:left-8 z-10">
                     <p className="font-clash text-3xl sm:text-4xl md:text-5xl">
                         {
@@ -52,7 +52,7 @@ const CardProyect = ({ img, fecha, title, odd }) => {
                     </p>
                     <span className="block scale-0 group-hover:scale-100 transition-transform duration-300 group-hover:transition-transform group-hover:duration-300 delay-200 font-clash sm:text-lg">2023</span>
                 </div>
-                <img className="absolute w-0 lg:w-28 -right-14 bottom-16 group-hover:transition-transform group-hover:duration-1000 group-hover:opacity-90 opacity-0 transition group-hover:scale-100 group-hover:rotate-[365deg] scale-0 duration-500" src="/link.svg" alt="Link" />
+                <img className="absolute w-0 lg:w-28 -right-14 bottom-16 group-hover:transition-transform group-hover:duration-1000 group-hover:opacity-90 opacity-0 transition group-hover:scale-100 group-hover:rotate-[365deg] scale-0 duration-500 brightness-110" src="/link.svg" alt="Link" />
             </a>
         </article>
     )

@@ -1,13 +1,13 @@
 ---
-import EnlaceAnimadoTexto from "./EnlaceAnimadoTexto.astro";
-import TextPresentacion from "./TextPresentacion.astro";
-import { presentacion } from '../data/presentacion'
+import EnlaceAnimadoTexto from "../EnlaceAnimadoTexto.astro";
+import TextPresentacion from "../TextPresentacion.astro";
+import { presentacion } from '../../data/presentacion'
 
 
 ---
 
 <section
-    class='grid place-content-center h-screen max-h-[444px] md:max-h-[623px] lg:max-h-[780px] max-w-[600px] mx-auto [text-wrap:_balance] lg:[text-wrap:_initial] sm:px-4 md:px-6'
+    class='grid place-content-center h-screen max-h-[444px] md:max-h-[623px] lg:max-h-[780px] max-w-[600px] mx-auto [text-wrap:_balance] lg:[text-wrap:_initial] sm:px-4 md:px-6 text-text2 dark:text-textDark2'
 >
     <div
         class='font-DmSans font-medium text-[20px] md:text-[24px] lg:text-[33px]'
@@ -19,7 +19,7 @@ import { presentacion } from '../data/presentacion'
         }
     </div>
     <div
-        class='letterAnimate mt-6 text-4xl md:text-5xl lg:text-5xl font-bold font-homeLetter text-gray-300'
+        class='letterAnimate mt-6 text-4xl md:text-5xl lg:text-5xl font-bold font-homeLetter text-text4 dark:text-text3'
     >
         <EnlaceAnimadoTexto text='Acerca de mí' textDecoration={true} />
     </div>

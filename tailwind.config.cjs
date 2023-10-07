@@ -6,14 +6,17 @@ module.exports = {
         extend: {
             colors: {
                 accent: "rgb(45 212 191)",
-                bMainDark: "rgb(39 39 42)",
                 mainDark: "#0a0a0a",
-                main: "#fafafa",
-                bMain: "#E4E4E7",
+                bMainDark: "rgb(39 39 42)",
                 textDark: "#F4F4F5",
-                text: "#18181b",
                 textDark2: "#D4D4D8",
-                text2: "#0A0A09",
+                main: "#fafafa",
+                main1: "#F4F4F4",
+                bMain: "#E4E4E7",
+                text: "#0A0A09",
+                text2: "#18181b",
+                text3: "#71717A",
+                text4: "#3F3F46",
             },
             fontFamily: {
                 clash: "Clash",

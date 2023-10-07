@@ -1,0 +1,25 @@
+---
+import TitleAnimadoScroll from "../TitleAnimadoScroll";
+import EnlaceAnimadoTexto from "../EnlaceAnimadoTexto.astro";
+import Projects from "../Projects.astro";
+
+const title = "Proyectos Destacados";
+---
+
+<section class='py-32 sm:px-4 md:px-6 lg:px-20'>
+    <header class='text-center mb-4 sm:mb-8 md:mb-10 lg:mb-12'>
+        <h2
+            class='font-clashVariable text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-text4 dark:text-textDark2'
+        >
+            <TitleAnimadoScroll client:visible title={title} />
+        </h2>
+    </header>
+    <Projects/>
+    <div
+        class='text-4xl lg:text-5xl text-center mt-4 sm:mt-8 md:mt-10 lg:mt-12'
+    >
+        <EnlaceAnimadoTexto text='Ver más' textDecoration={true} />
+    </div>
+</section>
+
+<style></style>

@@ -1,0 +1,49 @@
+---
+import IconsNav from '../IconsNav.astro';
+import TitleAnimado from '../TitleAnimado.astro';
+
+---
+
+<div class='min-h-screen flex justify-center items-center font-clash w-full font-medium'>
+    <div class='w-full group'>
+        <div class="sm:px-4 md:px-6 lg:px-20 lg:mb-4 group-hover:scale-[1.05] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s] group-hover:-translate-x-2 group-hover:-translate-y-3">
+            <p class='text-accent scale-up-ver-text text-[18px] lg:text-2xl font-medium'>ERICK JOSEP SALAZAR</p>
+        </div>
+        <div class="overflow-hidden">
+            <h1
+                class='text-text4 group-hover:text-text2 dark:text-textDark2 dark:group-hover:text-text3 font-clashVariable font-bold text-[clamp(4rem,26vh,16vw)] md:text-[clamp(2rem,20vh,14vw)] lg:text-[140px] leading-[clamp(4rem,26vh,14vw)] lg:leading-[7.4rem] text-center group-hover:scale-[1.02] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s]'
+            >
+                <div class='lg:mb-4'>
+                    <TitleAnimado text="Frontend" Rigth={true}/>
+                </div>
+                <div>
+                    <TitleAnimado text="Backend" Rigth={false}/>
+                </div>
+            </h1>
+        </div>
+        <div class='text-text3 flex pt-6 sm:px-4 md:px-6 lg:px-20 lg:mt-4 justify-between group-hover:scale-[1.05] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s] group-hover:translate-x-2 group-hover:translate-y-3 dark:group-hover:text-textDark2 group-hover:text-text4'>
+            <div class='flex gap-1 overflow-hidden h-12 items-center scale-in-center'>
+                <span
+                    class='hidden dark:flex flex-col gap-4 w-3 animate-Arrow -translate-y-[30%]'
+                >
+                    <img src='/arrow.svg' alt='arrow' />
+                    <img src='/arrow.svg' alt='arrow' />
+                </span>
+                <span
+                    class='flex dark:hidden flex-col gap-4 w-3 translate-y-[-30%] animate-Arrow'
+                >
+                    <img src='/arrow-black.svg' alt='arrow-black' />
+                    <img src='/arrow-black.svg' alt='arrow-black' />
+                </span>
+                <p class=' flex flex-col text-sm md:text-base lg:text-lg font-medium'>
+                    <span>Seguir</span>
+                    <span>Deslizando</span>
+                </p>
+            </div>
+
+            <div class='flex gap-x-2 scale-in-center'>
+                <IconsNav/>
+            </div>
+        </div>
+    </div>
+</div>

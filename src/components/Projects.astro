@@ -1,0 +1,18 @@
+---
+import { proyectos } from "../data/proyectos";
+import CardProyect from "./CardProyect";
+
+---
+<div class='flex flex-col gap-y-5 sm:gap-y-6 md:gap-y-7 lg:gap-y-8'>
+    {
+        proyectos.map(({ img, fecha, title }, index) => (
+            <CardProyect
+                client:load
+                img={img}
+                fecha={fecha}
+                title={title}
+                odd={index % 2 === 0}
+            />
+        ))
+    }
+</div>
