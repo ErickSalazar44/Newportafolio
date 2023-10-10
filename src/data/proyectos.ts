@@ -1,20 +1,94 @@
 import { type ProyectosType } from '../types/types';
 
-
 export const proyectos: ProyectosType[] = [
     {
         img: '/img/aluraflix.png',
+        imgs: ['/img/aluraflix3.png', '/img/aluraflix2.png'],
         fecha: '01/05',
-        title: 'Alura Flix'
+        title: 'Alura Flix',
+        id: '1',
+        ruta: 'https://aluraflix-ericksalazar.netlify.app/#/',
+        tipo: 'Desarrollo Web',
+        completado: '2023',
+        compañia: 'Oracle Next Education',
+        cliente: 'Dev',
+        rol: 'Front-end Dev',
+        resumen: 'Alura Flix es el proyecto final del programa Oracle Next Education, en el cual se busca aplicar todo lo aprendido. En este proyecto, me enfoqué en crear una plataforma de streaming.',
+        tecnologias: 'React - JavaScript - Redux - React-router-dom - HTML - CSS'
     },
     {
-        img: '/img/aluraflix.png',
+        img: '/img/tesla1.png',
+        imgs: ['/img/tesla.png','/img/tesla2.png'],
         fecha: '01/05',
-        title: 'Alura Flix'
+        title: 'Landing Tesla',
+        id: '2',
+        ruta: 'https://tesla-landing-ericksalazar.netlify.app/',
+        tipo: 'Desarrollo Web',
+        completado: '2023',
+        compañia: 'Proyecto Personal',
+        cliente: 'Dev',
+        rol: 'Front-end Dev',
+        resumen: 'Proyecto enfocado en la página de Tesla, en el cual realicé una réplica de la landing page de Tesla. Este proyecto me permitió explorar y aplicar diferentes tecnologías y técnicas de desarrollo web.',
+        tecnologias: 'TypeScript - Tailwind - Astro'
     },
     {
-        img: '/img/aluraflix.png',
+        img: '/img/pokedex2.png',
+        imgs: ['/img/pokedex.png','/img/pokedex1.png'],
         fecha: '01/05',
-        title: 'Alura Flix'
+        title: 'Pokedex',
+        id: '3',
+        ruta: 'https://pokedex-erick-salazar.netlify.app/#/',
+        tipo: 'Desarrollo Web',
+        completado: '2023',
+        compañia: 'Proyecto Personal',
+        cliente: 'Dev',
+        rol: 'Front-end Dev',
+        resumen: 'Pokedex. Este proyecto me ha brindado la oportunidad de profundizar en mi conocimiento de React y Redux, así como de mejorar mis habilidades en el desarrollo web responsive.',
+        tecnologias: 'React - JavaScript - React Router DOM - Redux - CSS'
     },
-]
+    {
+        img: '/img/login.png',
+        imgs: ['/img/login1.png'],
+        fecha: '01/05',
+        title: 'Login User',
+        id: '4',
+        ruta: 'https://login-ericksalazar.netlify.app/#/login',
+        tipo: 'Desarrollo Web',
+        completado: '2023',
+        compañia: 'Proyecto Personal',
+        cliente: 'Dev',
+        rol: 'Back-end Dev',
+        resumen: 'Proyecto en el cual puedes registrar usuarios en una base de datos, verificación vía email, autenticación y contraseña encriptada para mayor seguridad.',
+        tecnologias: 'Node.js - Express - Jest - PostgreSQL - Bcrypt'
+    },
+    {
+        img: '/img/onlineStore.png',
+        imgs: ['/img/onlineStore1.png'],
+        fecha: '01/05',
+        title: 'Online Store',
+        id: '5',
+        ruta: 'https://onlinestore-ericksalazar.netlify.app/',
+        tipo: 'Desarrollo Web',
+        completado: '2023',
+        compañia: 'Academlo',
+        cliente: 'Dev',
+        rol: 'Full-Stack Dev',
+        resumen: 'E-commerce. Este proyecto full stack de comercio electrónico demuestra mi habilidad para desarrollar soluciones completas y eficientes, desde la concepción hasta la implementación.',
+        tecnologias: 'Node.js - React.js - Express - JSON Web Tokens - Bcrypt - Sequelize - Redux - PostgreSQL - Jest'
+    },
+    {
+        img: '/img/aluraGeek.png',
+        imgs: ['/img/aluraGeek1.png'],
+        fecha: '01/05',
+        title: 'Alura Geek',
+        id: '6',
+        ruta: 'https://alurageek-erick.netlify.app/',
+        tipo: 'Desarrollo Web',
+        completado: '2023',
+        compañia: 'Alura Latam',
+        cliente: 'Dev',
+        rol: 'Front-end Dev',
+        resumen: 'Comercio electrónico con un enfoque en el estilo geek, en el que implementé la API viewTransition. Este proyecto formó parte del desafío de Oracle Next Education y resultó en una valiosa oportunidad para perfeccionar mis habilidades en el uso de React Router DOM y la gestión de transiciones.',
+        tecnologias: 'React - JavaScript - HTML - CSS - React Router DOM'
+    },
+];

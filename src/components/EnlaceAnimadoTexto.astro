@@ -2,20 +2,24 @@
 interface Props {
     text: string
     textDecoration: boolean
+    background ?:boolean
+    ruta: string
+    download?: boolean
+    target?: boolean
 }
 
-const { text, textDecoration } = Astro.props
+const { text, textDecoration, background, ruta, download, target } = Astro.props
 
 const textUpperArray = text.split("");
 
 ---
 
-<a href="/" class={`letter__contenedor font-clash ${textDecoration && 'textDecoration'} after:bg-accent`}>
+<a href={ruta} target={`${target ? '_blank' : ''}`} download={download ? 'Erick_Salazar_CV' : undefined} class={`letter__contenedor font-clash ${textDecoration && 'textDecoration'} after:bg-accent`}>
     {textUpperArray.map((letter, i) => (
         <div class ="inline-block overflow-hidden">
             <span
                 title={letter}
-                class={`letter transition-transform duration-700`}
+                class={`letter transition-transform duration-700 ${background && 'bg-accent text-white before:text-text3'} `}
                 style={{ transitionDelay: `calc(75 * ${i}ms)` }}
             >
                 {letter}
@@ -37,6 +41,7 @@ const textUpperArray = text.split("");
     bottom: 0;
     left: -100%;
     transition: left 1.2s ease-in-out;
+
 }
 
 .textDecoration:hover::after {
@@ -64,5 +69,6 @@ const textUpperArray = text.split("");
     top: 200%;
     left: 0;
 }
+
 
 </style>

@@ -1,0 +1,169 @@
+---
+import { type ProyectosType } from "../../types/types";
+import { proyectos } from "../../data/proyectos";
+import Layout from "../../layouts/Layout.astro";
+import VideoPlayAnimate from "../../components/VideoPlayAnimate";
+import List from "../../components/project/List.astro";
+import Arrow from "../../icons/Arrow.astro";
+
+export const getStaticPaths = () => {
+    return proyectos.map((proyecto) => ({ params: { id: proyecto.id } }));
+};
+
+interface Props {
+    id: string | undefined;
+}
+
+const getProyectoById = (id: string | undefined): ProyectosType | undefined => {
+    if (id) {
+        return proyectos.find((proyecto) => proyecto.id === id);
+    }
+    return undefined;
+};
+
+const { id } = Astro.params;
+const proyecto = getProyectoById(id);
+
+const types = [
+    "Tipo",
+    "Completado",
+    "Compañia",
+    "Cliente",
+    "Rol",
+    "Pagina URL",
+];
+---
+
+<Layout title={`Proyectos ${id}`} margen={false}>
+    <section class='pt-24 font-clash'>
+        <VideoPlayAnimate
+            client:visible
+            img={proyecto?.img}
+            id={id}
+            ruta={proyecto?.ruta}
+        />
+        <div
+            class='py-20 px-[22px] sm:px-6 lg:px-8 text-text2 dark:text-textDark'
+        >
+            <ul
+                class='grid grid-cols-2 gap-y-8 gap-x-10 sm:gap-y-10 sm:gap-x-12 md:gap-y-12 md:gap-x-14 max-w-screen-sm mx-auto'
+            >
+                <li>
+                    <List type='tipo' value={proyecto?.tipo} />
+                </li>
+                <li>
+                    <List type='Completado' value={proyecto?.completado} />
+                </li>
+                <li>
+                    <List type='Compañia' value={proyecto?.compañia} />
+                </li>
+                <li>
+                    <List type='Cliente' value={proyecto?.cliente} />
+                </li>
+                <li>
+                    <List type='Rol' value={proyecto?.rol} />
+                </li>
+                <li>
+                    <h4 class='flex flex-col font-clash letterScroll'>
+                        <span class='block text-xs lg:text-base opacity-80'
+                            >Proyecto URL</span
+                        >
+                        <a
+                            class='sm:text-lg flex'
+                            href={proyecto?.ruta}
+                            target='_blank'
+                        >
+                            <span
+                                class='font-DmSans sm:text-xl md:text-2xl lg:text-3xl'
+                            >
+                                Visitar Pagina</span
+                            >
+                            <span class='-rotate-90'>
+                                <Arrow />
+                            </span>
+                        </a>
+                    </h4>
+                </li>
+            </ul>
+            <article class='mt-20 max-w-screen-sm mx-auto'>
+                <h5
+                    class='inline-block dark:bg-accent dark:text-white text-xs lg:text-base letterScroll text-accent'
+                >
+                    Resumen
+                </h5>
+                <p
+                    class='mb-10 font-DmSans sm:text-xl md:text-2xl lg:text-3xl letterScroll'
+                >
+                    {proyecto?.resumen}
+                </p>
+                <h5
+                    class='inline-block text-xs lg:text-base letterScroll text-accent dark:bg-accent dark:text-white'
+                >
+                    Tecnologías
+                </h5>
+                <p
+                    class='font-DmSans sm:text-xl md:text-2xl lg:text-3xl letterScroll'
+                >
+                    {proyecto?.tecnologias}
+                </p>
+            </article>
+            {
+                proyecto?.imgs.map(img => (
+                    <picture>
+                        <img
+                            class='imgScroll mt-20 w-full aspect-[16/12]'
+                            src={img}
+                            alt=''
+                        />
+                    </picture>
+                ))
+            }
+        </div>
+    </section>
+</Layout>
+
+<style is:inline>
+    .letterScroll {
+        view-timeline-name: --top;
+        view-timeline-axis: block;
+        animation-timeline: --top;
+        animation-name: scroll-top;
+        animation-range: entry 25% cover 50%;
+        animation-fill-mode: both;
+    }
+
+    .imgScroll {
+        view-timeline-name: --imagen;
+        view-timeline-axis: block;
+        animation-timeline: --imagen;
+        animation-name: scroll-img;
+        animation-range: entry 25% cover 50%;
+        animation-fill-mode: both;
+    }
+
+    @keyframes scroll-top {
+        from {
+            opacity: 0;
+            transform: translateY(200%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scroll-img {
+        from {
+            opacity: 0;
+            transform: translateY(100%);
+            scale: 90%;
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            scale: 100%;
+        }
+    }
+</style>

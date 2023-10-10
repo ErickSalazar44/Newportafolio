@@ -9,21 +9,10 @@ const { text } = Astro.props;
 <p class='pb-4 leading-[1.4] opacity-80'>
     {
         text.split(" ").map((text) => (
-            <span class='inline-block overflow-hidden align-top'>
+            <span class='letterAnimate inline-block overflow-hidden align-top'>
                 {text}
                 {text !== " " && <span class='inline-block w-2' />}
             </span>
         ))
     }
 </p>
-
-<style>
-    span {
-        view-timeline-name: --presentacion;
-        view-timeline-axis: block;
-        animation-timeline: --presentacion;
-        animation-name: scroll;
-        animation-range: entry 25% cover 70%;
-        animation-fill-mode: both;
-    }
-</style>

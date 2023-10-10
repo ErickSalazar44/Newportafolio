@@ -6,15 +6,11 @@ export const navegadores: Navegadores[] = [
         ruta: '/'
     },
     {
-        title: 'Acerca de mí',
-        ruta: '/about'
-    },
-    {
         title: 'Proyectos',
         ruta: '/projectsPage'
     },
     {
-        title: 'Formacion',
-        ruta: '/formacion'
+        title: 'Acerca de mí',
+        ruta: '/about'
     },
 ]

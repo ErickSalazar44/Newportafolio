@@ -14,12 +14,11 @@ const title = "Proyectos Destacados";
             <TitleAnimadoScroll client:visible title={title} />
         </h2>
     </header>
-    <Projects/>
+    <Projects cantidad={3}/>
     <div
-        class='text-4xl lg:text-5xl text-center mt-4 sm:mt-8 md:mt-10 lg:mt-12'
+        class='text-text2 dark:text-textDark2 text-4xl lg:text-5xl text-center mt-8 sm:mt-10 md:mt-12 lg:mt-16'
     >
-        <EnlaceAnimadoTexto text='Ver más' textDecoration={true} />
+        <EnlaceAnimadoTexto text='Ver más' textDecoration={true} ruta="/projectsPage"/>
     </div>
 </section>
 
-<style></style>

@@ -5,7 +5,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                accent: "rgb(45 212 191)",
+                accent: "#00668c",
                 mainDark: "#0a0a0a",
                 bMainDark: "rgb(39 39 42)",
                 textDark: "#F4F4F5",
@@ -17,6 +17,8 @@ module.exports = {
                 text2: "#18181b",
                 text3: "#71717A",
                 text4: "#3F3F46",
+                mainBg: "#fafafad5",
+                mainBgDark: "#000",
             },
             fontFamily: {
                 clash: "Clash",
@@ -54,11 +56,26 @@ module.exports = {
                         transform: "translateX(1)",
                     },
                 },
+                scaleInCenter: {
+                    "0%": {
+                        transform: "scale(0)",
+                        opacity: "0",
+                    },
+                    "80%": {
+                        transform: "scale(1.2)",
+                    },
+                    "100%": {
+                        transform: "scale(1)",
+                        opacity: "1",
+                    },
+                },
             },
             animation: {
-                Arrow: "translateY  2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 2s",
+                Arrow: "translateY 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 2s",
                 trackingRight: "trackingRight 1s cubic-bezier(0,.19,.56,1)",
                 trackingLeft: "trackingLeft 1s cubic-bezier(0,.19,.56,1)",
+                scaleInCenter:
+                    "scaleInCenter 0.5s cubic-bezier(0, 0.19, 0.56, 1) 0.7s both",
             },
             backgroundImage: {
                 cardProyect:

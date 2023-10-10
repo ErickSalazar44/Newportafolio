@@ -1,18 +1,50 @@
 ---
 import { proyectos } from "../data/proyectos";
 import CardProyect from "./CardProyect";
+interface Props {
+    cantidad? : number
+}
+
+const { cantidad } = Astro.props
 
 ---
 <div class='flex flex-col gap-y-5 sm:gap-y-6 md:gap-y-7 lg:gap-y-8'>
     {
-        proyectos.map(({ img, fecha, title }, index) => (
+        proyectos.slice(0, cantidad).map(({ img, fecha, title, id }, index) => (
             <CardProyect
-                client:load
+                client:visible
                 img={img}
                 fecha={fecha}
                 title={title}
+                id={id}
                 odd={index % 2 === 0}
             />
         ))
     }
 </div>
+
+<style is:inline>
+    .showCard {
+        view-timeline-name: --card;
+        view-timeline-axis: block;
+
+        animation-timeline: --card;
+        animation-name: show-card;
+        animation-range: entry 25% cover 50%;
+        animation-fill-mode: both;
+    }
+
+    @keyframes show-card {
+                from {
+                    opacity: 0;
+                    transform: translateY(200%);
+                    scale: 0%;
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translate(0);
+                    scale: 100%;
+                }
+            }
+</style>

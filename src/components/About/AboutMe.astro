@@ -6,17 +6,17 @@ import FondoDecoracion from "./FondoDecoracion.astro";
 
 
 <section
-    class='relative rounded-3xl lg:grid lg:grid-cols-10 lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:items-center lg:bg-contentbackground'
+    class='relative rounded-3xl lg:grid lg:grid-cols-10 lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:items-center '
 >
     <FondoDecoracion />
     <div
-        class='py-12 mx-auto space-y-6 sm:py-16 sm:max-w-3xl lg:col-span-7 lg:col-start-4 lg:max-w-none'
+        class='pt-20 pb-28 mx-auto space-y-6 md:py-16 sm:max-w-3xl lg:col-span-7 lg:col-start-4 lg:max-w-none relative'
     >
         <h2
             class='dark:text-textDark text-text text-4xl font-bold tracking-tighter sm:text-5xl'
             id='about-heading'
         >
-            Soy Erick Salazar. Vivo en Lima Perú, where I work on my startups.
+            Hola soy Erick Salazar, Desarrollador Web Full Stack.
         </h2>
         <p class='text-lg text-text2 dark:text-textDark2 md:text-primary-100'>
             Experiencia en la creación de interfaces de usuario. Poseo
@@ -31,8 +31,8 @@ import FondoDecoracion from "./FondoDecoracion.astro";
             Aprovechando diversas plataformas en línea, he adquirido
             conocimientos sólidos en estas áreas.
         </p>
-        <div class='text-center w-full text-3xl text-text2 dark:text-textDark2'>
-            <EnlaceAnimadoTexto text='Descargar CV' textDecoration={true} />
+        <div class='text-center md:bottom-0 w-full text-3xl text-text2 dark:text-textDark2 absolute'>
+            <EnlaceAnimadoTexto download={true} ruta="/ERICK_SALAZAR_CV2" text='Descargar CV' textDecoration={true} background={true}/>
         </div>
     </div>
 </section>

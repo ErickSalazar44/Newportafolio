@@ -1,9 +1,7 @@
 ---
 import EnlaceAnimadoTexto from "../EnlaceAnimadoTexto.astro";
 import TextPresentacion from "../TextPresentacion.astro";
-import { presentacion } from '../../data/presentacion'
-
-
+import { presentacion } from "../../data/presentacion";
 ---
 
 <section
@@ -12,20 +10,17 @@ import { presentacion } from '../../data/presentacion'
     <div
         class='font-DmSans font-medium text-[20px] md:text-[24px] lg:text-[33px]'
     >
-        {
-            presentacion.map(parrafo => (
-                <TextPresentacion text={parrafo} />
-            ))
-        }
+        {presentacion.map((parrafo) => <TextPresentacion text={parrafo} />)}
     </div>
     <div
         class='letterAnimate mt-6 text-4xl md:text-5xl lg:text-5xl font-bold font-homeLetter text-text4 dark:text-text3'
     >
-        <EnlaceAnimadoTexto text='Acerca de mí' textDecoration={true} />
+        <EnlaceAnimadoTexto text='Acerca de mí' textDecoration={true} ruta="/about"/>
     </div>
 </section>
 
-<style>
+<style is:inline>
+
     .letterAnimate {
         view-timeline-name: --presentacion;
         view-timeline-axis: block;
@@ -34,4 +29,17 @@ import { presentacion } from '../../data/presentacion'
         animation-range: entry 25% cover 50%;
         animation-fill-mode: both;
     }
+
+    @keyframes scroll {
+        from {
+            opacity: 0;
+            transform: translateY(200%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 </style>

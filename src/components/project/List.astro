@@ -1,0 +1,13 @@
+---
+interface Props {
+    type: string;
+    value: string;
+}
+
+const { type, value } = Astro.props;
+---
+
+<h4 class='flex flex-col letterScroll'>
+    <span class='block text-xs lg:text-base opacity-80'>{type}</span>
+    <span class='font-DmSans sm:text-xl md:text-2xl lg:text-3xl'>{value}</span>
+</h4>

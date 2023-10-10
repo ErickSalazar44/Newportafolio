@@ -1,24 +1,23 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import { bgPrincipal } from "../UI/fondoBg"
+import Navbar from "../components/shared/Navbar.tsx";
+import Contact from "../components/shared/Contact.astro";
+import Footer from "../components/shared/Footer.astro";
+import ButtonDarkMode from "../components/ButtonDarkMode.astro";
+
 interface Props {
     title: string;
+    margen?: boolean;
 }
 
-import Footer from "../components/Footer.astro";
-import Navbar from "../components/shared/Navbar.tsx";
-import SwitchDarkMode from "../components/SwitchDarkMode.tsx";
-import Contact from "../components/Contact.astro"
-
-const { title } = Astro.props;
+const { title, margen = true } = Astro.props;
 const { pathname } = Astro.url;
 
-const bgPrincipal = {
-    background:
-        "radial-gradient(84% 84% at -20% -20%,var(--main-bg) 0%,var(--gradient-1) 100%),radial-gradient(40% 82% at 50% 50%,var(--gradient-2) 0%,var(--gradient-2) 100%),radial-gradient(82% 60% at 34% 10%,var(--main-bg) 0%,var(--gradient-3-start) 46%,var(--gradient-3-end) 72%,var(--main-bg) 90%)",
-};
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='en' class='dark'>
     <head>
         <meta charset='UTF-8' />
         <meta name='description' content='Astro description' />
@@ -26,119 +25,52 @@ const bgPrincipal = {
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
         <title>{title}</title>
+        <link rel="stylesheet" href="/fonts/fonts.css">
+        <ViewTransitions/>
     </head>
-    <body class='h-full dark'>
-        <div
-            class='h-screen sm:px-8 text-primary-100 selection:text-accent bg-repeat'
-            style={bgPrincipal}
-        >
-            <div
-                class='mx-auto max-w-6xl min-h-full bg-contentbackground border-x-[1px] border-bMain dark:border-bMainDark'
-            >
-                <Navbar client:load path={pathname}/>
-                <main
-                    class='px-[22px] sm:px-6 lg:px-8 dark:bg-mainDark bg-main1'
-                >
-                    <slot />
-                    <Contact/>
-                </main>
-                <Footer />
-                <SwitchDarkMode client:load />
-            </div>
+    <body
+        class='bg-mainBg dark:bg-mainBgDark sm:px-8 text-primary-100 selection:bg-accent selection:text-textDark'
+    >
+        <div class='h-screen w-screen -z-10 fixed top-0 right-0' style={bgPrincipal}></div>
+        <div class='mx-auto max-w-6xl min-h-full border-x-[1px] border-bMain dark:border-bMainDark'>
+            <Navbar client:load path={pathname} />
+            <main class={`${ margen ? "px-[22px] sm:px-6 lg:px-8" : "px-0" } dark:bg-mainDark bg-main1`}>
+                <slot />
+                <Contact />
+            </main>
+            <Footer />
+            <ButtonDarkMode />
         </div>
+
+        <style is:global>
+            :root {
+                --main-bg: #fafafad5;
+                --main-bg-1: #0a0a09;
+                --gradient-1: rgba(255, 255, 255, 0);
+                --gradient-2: #fafafad5;
+                --gradient-3-start: #757de8;
+                --gradient-3-end: #0085ff;
+            }
+
+            .dark {
+                --main-bg: #000;
+                --gradient-1: rgba(0, 0, 0, 0);
+                --gradient-2: rgba(0, 0, 0, 0.74);
+                --gradient-3-start: #acc2ef;
+                --gradient-3-end: #71c4ef;
+            }
+
+        </style>
+
+        <script>
+
+            import { initializeTheme  } from "../utils/themeManager";
+
+            // Inicializa el tema al cargar la página
+            initializeTheme();
+
+            // Se ejecuta en la navegación de view transitions
+            document.addEventListener("astro:after-swap", initializeTheme );
+        </script>
     </body>
 </html>
-<style is:global>
-    :root {
-        --main-bg: #fafafad5;
-        --main-bg-1: #0a0a09;
-        --gradient-1: rgba(255, 255, 255, 0);
-        --gradient-2: #fafafad5;
-        --gradient-3-start: rgba(66, 240, 173, 0.756);
-        --gradient-3-end: hsl(170, 100%, 50%);
-    }
-
-    body {
-        background: var(--main-bg);
-    }
-
-    .dark {
-        --main-bg: #000;
-        --gradient-1: rgba(0, 0, 0, 0);
-        --gradient-2: rgba(0, 0, 0, 0.74);
-        --gradient-3-start: rgba(130, 199, 172, 0.91);
-        --gradient-3-end: hsl(153, 60%, 53%);
-    }
-    @font-face {
-        font-family: "Clash";
-        src: url("../fonts/ClashDisplay-Medium.otf");
-        font-weight: 500;
-    }
-
-    @font-face {
-        font-family: "Clash";
-        src: url("../fonts/ClashDisplay-Light.ttf");
-        font-weight: 300;
-    }
-
-    @font-face {
-        font-family: "ClashVariable";
-        src: url("../fonts/ClashDisplay-Variable.ttf");
-        font-weight: bold;
-    }
-
-    @font-face {
-        font-family: "DMSans";
-        src: url("../fonts/DMSans-Medium.ttf") format("opentype");
-        font-weight: 500;
-    }
-
-    .scale-up-ver-text {
-        animation: scale-up-ver-text 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1s
-            both;
-    }
-
-    .scale-in-center {
-        -webkit-animation: scale-in-center 0.4s
-            cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
-        animation: scale-in-center 0.5s cubic-bezier(0, 0.19, 0.56, 1) 0.7s both;
-    }
-
-    @keyframes scale-in-center {
-        0% {
-            transform: scale(0);
-            opacity: 0;
-        }
-        ,
-        80% {
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    @keyframes scale-up-ver-text {
-        0% {
-            opacity: 0;
-            transform: translateY(1rem);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(1);
-        }
-    }
-
-    @keyframes scroll {
-        from {
-            opacity: 0;
-            transform: translateY(200%);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-</style>
