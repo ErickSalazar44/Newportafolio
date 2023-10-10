@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import IconsNav from "../IconsNav.astro";
 import TitleAnimado from "../TitleAnimado.astro";
 ---
@@ -9,7 +8,7 @@ import TitleAnimado from "../TitleAnimado.astro";
 >
     <div class='w-full group'>
         <div
-            class='sm:px-4 md:px-6 lg:px-20 lg:mb-4 group-hover:scale-[1.05] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s] group-hover:-translate-x-2 group-hover:-translate-y-3'
+            class='sm:px-4 md:px-6 lg:px-20 lg:mb-4 transition duration-[1.5s]'
         >
             <p
                 class='text-accent scale-up-ver-text text-[18px] lg:text-2xl font-medium'
@@ -19,7 +18,7 @@ import TitleAnimado from "../TitleAnimado.astro";
         </div>
         <div class='overflow-hidden'>
             <h1
-                class='text-text4 group-hover:text-text2 dark:text-textDark2 dark:group-hover:text-text3 font-clashVariable font-bold text-[clamp(4rem,26vh,16vw)] md:text-[clamp(2rem,20vh,14vw)] lg:text-[140px] leading-[clamp(4rem,26vh,14vw)] lg:leading-[7.4rem] text-center group-hover:scale-[1.02] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s]'
+                class='text-text4 group-hover:text-text2 dark:text-textDark2 dark:group-hover:text-textDark font-clashVariable font-bold text-[clamp(4rem,26vh,16vw)] md:text-[clamp(2rem,20vh,14vw)] lg:text-[140px] leading-[clamp(4rem,26vh,14vw)] lg:leading-[7.4rem] text-center group-hover:scale-[1.02] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s]'
             >
                 <div class='lg:mb-4'>
                     <TitleAnimado text='Frontend' Rigth={true} />
@@ -30,7 +29,7 @@ import TitleAnimado from "../TitleAnimado.astro";
             </h1>
         </div>
         <div
-            class='text-text3 flex pt-6 sm:px-4 md:px-6 lg:px-20 lg:mt-4 justify-between group-hover:scale-[1.05] group-hover:transition group-hover:duration-[1.5s] transition duration-[1.5s] group-hover:translate-x-2 group-hover:translate-y-3 dark:group-hover:text-textDark2 group-hover:text-text4'
+            class='text-text4 dark:text-text3 flex pt-6 sm:px-4 md:px-6 lg:px-20 lg:mt-4 justify-between transition duration-[1.5s]'
         >
             <div
                 class='flex gap-1 overflow-hidden h-12 items-center animate-scaleInCenter'
