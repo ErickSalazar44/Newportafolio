@@ -39,6 +39,9 @@ const VideoPlayAnimate = ({ img, id, ruta }) => {
                     src={img}
                     alt="Alura"
                     ref={videoRef}
+                    width={100}
+                    decoding='async'
+                    loading='lazy'
                     className="w-full aspect-[16/12] "
                     style={{ viewTransitionName: `img-${id}` }}
                 />

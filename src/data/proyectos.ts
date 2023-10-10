@@ -3,7 +3,7 @@ import { type ProyectosType } from '../types/types';
 export const proyectos: ProyectosType[] = [
     {
         img: '/img/aluraflix.png',
-        imgs: ['/img/aluraflix3.png', '/img/aluraflix2.png'],
+        imgs: ['/img/aluraflix3.png', '/img/aluraflix2.webp'],
         fecha: '01/05',
         title: 'Alura Flix',
         id: '1',
@@ -17,8 +17,8 @@ export const proyectos: ProyectosType[] = [
         tecnologias: 'React - JavaScript - Redux - React-router-dom - HTML - CSS'
     },
     {
-        img: '/img/tesla1.png',
-        imgs: ['/img/tesla.png','/img/tesla2.png'],
+        img: '/img/tesla1.avif',
+        imgs: ['/img/tesla.avif','/img/tesla2.avif'],
         fecha: '01/05',
         title: 'Landing Tesla',
         id: '2',
@@ -32,8 +32,8 @@ export const proyectos: ProyectosType[] = [
         tecnologias: 'TypeScript - Tailwind - Astro'
     },
     {
-        img: '/img/pokedex2.png',
-        imgs: ['/img/pokedex.png','/img/pokedex1.png'],
+        img: '/img/pokedex2.avif',
+        imgs: ['/img/pokedex.avif','/img/pokedex1.avif'],
         fecha: '01/05',
         title: 'Pokedex',
         id: '3',
@@ -47,8 +47,8 @@ export const proyectos: ProyectosType[] = [
         tecnologias: 'React - JavaScript - React Router DOM - Redux - CSS'
     },
     {
-        img: '/img/login.png',
-        imgs: ['/img/login1.png'],
+        img: '/img/login.webp',
+        imgs: ['/img/login1.webp'],
         fecha: '01/05',
         title: 'Login User',
         id: '4',
@@ -62,8 +62,8 @@ export const proyectos: ProyectosType[] = [
         tecnologias: 'Node.js - Express - Jest - PostgreSQL - Bcrypt'
     },
     {
-        img: '/img/onlineStore.png',
-        imgs: ['/img/onlineStore1.png'],
+        img: '/img/onlineStore.webp',
+        imgs: ['/img/onlineStore1.webp'],
         fecha: '01/05',
         title: 'Online Store',
         id: '5',
@@ -77,8 +77,8 @@ export const proyectos: ProyectosType[] = [
         tecnologias: 'Node.js - React.js - Express - JSON Web Tokens - Bcrypt - Sequelize - Redux - PostgreSQL - Jest'
     },
     {
-        img: '/img/aluraGeek.png',
-        imgs: ['/img/aluraGeek1.png'],
+        img: '/img/aluraGeek.webp',
+        imgs: ['/img/aluraGeek1.webp'],
         fecha: '01/05',
         title: 'Alura Geek',
         id: '6',

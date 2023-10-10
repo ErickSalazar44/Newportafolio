@@ -6,6 +6,7 @@ import VideoPlayAnimate from "../../components/VideoPlayAnimate";
 import List from "../../components/project/List.astro";
 import Arrow from "../../icons/Arrow.astro";
 
+
 export const getStaticPaths = () => {
     return proyectos.map((proyecto) => ({ params: { id: proyecto.id } }));
 };
@@ -23,15 +24,6 @@ const getProyectoById = (id: string | undefined): ProyectosType | undefined => {
 
 const { id } = Astro.params;
 const proyecto = getProyectoById(id);
-
-const types = [
-    "Tipo",
-    "Completado",
-    "Compañia",
-    "Cliente",
-    "Rol",
-    "Pagina URL",
-];
 ---
 
 <Layout title={`Proyectos ${id}`} margen={false}>
@@ -108,12 +100,15 @@ const types = [
                 </p>
             </article>
             {
-                proyecto?.imgs.map(img => (
+                proyecto?.imgs.map((img) => (
                     <picture>
                         <img
-                            class='imgScroll mt-20 w-full aspect-[16/12]'
                             src={img}
-                            alt=''
+                            width='100'
+                            decoding='async'
+                            loading='lazy'
+                            class='imgScroll mt-20 w-full aspect-[16/12]'
+                            alt={proyecto?.title}
                         />
                     </picture>
                 ))

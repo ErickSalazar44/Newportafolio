@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import IconsNav from "../IconsNav.astro";
 import TitleAnimado from "../TitleAnimado.astro";
 ---
@@ -37,14 +38,14 @@ import TitleAnimado from "../TitleAnimado.astro";
                 <span
                     class='hidden dark:flex flex-col gap-4 w-3 animate-Arrow -translate-y-[30%]'
                 >
-                    <img src='/arrow.svg' alt='arrow' />
-                    <img src='/arrow.svg' alt='arrow' />
+                    <img src='/arrow.svg' width="100" alt='arrow1'/>
+                    <img src='/arrow.svg' width="100" alt='arrow2'/>
                 </span>
                 <span
                     class='flex dark:hidden flex-col gap-4 w-3 translate-y-[-30%] animate-Arrow'
                 >
-                    <img src='/arrow-black.svg' alt='arrow-black' />
-                    <img src='/arrow-black.svg' alt='arrow-black' />
+                    <img src='/arrow-black.svg' width="100" alt='arrow-black'/>
+                    <img src='/arrow-black.svg' width="100" alt='arrow-black'/>
                 </span>
                 <p
                     class='flex flex-col text-sm md:text-base lg:text-lg font-medium'
