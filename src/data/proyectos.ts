@@ -4,7 +4,7 @@ export const proyectos: ProyectosType[] = [
     {
         img: '/img/aluraflix.png',
         imgs: ['/img/aluraflix3.png', '/img/aluraflix2.webp'],
-        fecha: '01/05',
+        fecha: '19/10',
         title: 'Alura Flix',
         id: '1',
         ruta: 'https://aluraflix-ericksalazar.netlify.app/#/',
@@ -19,12 +19,12 @@ export const proyectos: ProyectosType[] = [
     {
         img: '/img/tesla1.avif',
         imgs: ['/img/tesla.avif','/img/tesla2.avif'],
-        fecha: '01/05',
+        fecha: '01/09',
         title: 'Landing Tesla',
         id: '2',
         ruta: 'https://tesla-landing-ericksalazar.netlify.app/',
         tipo: 'Desarrollo Web',
-        completado: '2023',
+        completado: 'En Desarrollo',
         compañia: 'Proyecto Personal',
         cliente: 'Dev',
         rol: 'Front-end Dev',
@@ -34,7 +34,7 @@ export const proyectos: ProyectosType[] = [
     {
         img: '/img/pokedex2.avif',
         imgs: ['/img/pokedex.avif','/img/pokedex1.avif'],
-        fecha: '01/05',
+        fecha: '04/05',
         title: 'Pokedex',
         id: '3',
         ruta: 'https://pokedex-erick-salazar.netlify.app/#/',
@@ -49,7 +49,7 @@ export const proyectos: ProyectosType[] = [
     {
         img: '/img/login.webp',
         imgs: ['/img/login1.webp'],
-        fecha: '01/05',
+        fecha: '16/07',
         title: 'Login User',
         id: '4',
         ruta: 'https://login-ericksalazar.netlify.app/#/login',
@@ -64,7 +64,7 @@ export const proyectos: ProyectosType[] = [
     {
         img: '/img/onlineStore.webp',
         imgs: ['/img/onlineStore1.webp'],
-        fecha: '01/05',
+        fecha: '01/06',
         title: 'Online Store',
         id: '5',
         ruta: 'https://onlinestore-ericksalazar.netlify.app/',
@@ -79,7 +79,7 @@ export const proyectos: ProyectosType[] = [
     {
         img: '/img/aluraGeek.webp',
         imgs: ['/img/aluraGeek1.webp'],
-        fecha: '01/05',
+        fecha: '10/07',
         title: 'Alura Geek',
         id: '6',
         ruta: 'https://alurageek-erick.netlify.app/',
