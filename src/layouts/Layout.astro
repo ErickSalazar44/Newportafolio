@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { bgPrincipal } from "../UI/fondoBg"
+import { bgPrincipal } from "../UI/fondoBg";
 import Navbar from "../components/shared/Navbar.tsx";
 import Contact from "../components/shared/Contact.astro";
 import Footer from "../components/shared/Footer.astro";
@@ -13,7 +13,6 @@ interface Props {
 
 const { title, margen = true } = Astro.props;
 const { pathname } = Astro.url;
-
 ---
 
 <!doctype html>
@@ -25,16 +24,26 @@ const { pathname } = Astro.url;
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
         <title>{title}</title>
-        <link rel="stylesheet" href="/fonts/fonts.css">
-        <ViewTransitions/>
+        <link rel='stylesheet' href='/fonts/fonts.css' />
+        <ViewTransitions />
     </head>
     <body
         class='bg-mainBg dark:bg-mainBgDark sm:px-8 text-primary-100 selection:bg-accent selection:text-textDark'
     >
-        <div class='h-screen w-screen -z-10 fixed top-0 right-0' style={bgPrincipal}></div>
-        <div class='mx-auto max-w-6xl min-h-full border-x-[1px] border-bMain dark:border-bMainDark'>
+        <div
+            class='h-screen w-screen -z-10 fixed top-0 right-0'
+            style={bgPrincipal}
+        >
+        </div>
+        <div
+            class='mx-auto max-w-6xl min-h-full border-x-[1px] border-bMain dark:border-bMainDark'
+        >
             <Navbar client:load path={pathname} />
-            <main class={`${ margen ? "px-[22px] sm:px-6 lg:px-8" : "px-0" } dark:bg-mainDark bg-main1`}>
+            <main
+                class={`${
+                    margen ? "px-[22px] sm:px-6 lg:px-8" : "px-0"
+                } dark:bg-mainDark bg-main1`}
+            >
                 <slot />
                 <Contact />
             </main>
@@ -59,18 +68,53 @@ const { pathname } = Astro.url;
                 --gradient-3-start: #acc2ef;
                 --gradient-3-end: #71c4ef;
             }
-
+            .ayudaVisual {
+                position: relative;
+                transition:
+                    opacity 0.3s,
+                    visibility 0.3s;
+                z-index: 5000;
+            }
+            .ayudaVisual:before {
+                opacity: 0;
+                color: white;
+                padding: 9px 9px 7px 9px;
+                background: #d4d4d4;
+                border-radius: 4px;
+                line-height: 1;
+                box-shadow:
+                    rgba(0, 0, 0, 0.25) 0px 14px 28px,
+                    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+                transition:
+                    opacity 0.3s,
+                    visibility 0.3s;
+                font-size: 14px;
+                font-weight: 600;
+                position: absolute;
+                visibility: hidden;
+                text-wrap: nowrap;
+                z-index: 100;
+            }
+            .context:hover::before {
+                visibility: visible;
+                opacity: 1;
+            }
+            .context-top:before {
+                content: attr(data-content);
+            }
+            .context-top2:before {
+                content: attr(data-content2);
+            }
         </style>
 
         <script>
-
-            import { initializeTheme  } from "../utils/themeManager";
+            import { initializeTheme } from "../utils/themeManager";
 
             // Inicializa el tema al cargar la página
             initializeTheme();
 
             // Se ejecuta en la navegación de view transitions
-            document.addEventListener("astro:after-swap", initializeTheme );
+            document.addEventListener("astro:after-swap", initializeTheme);
         </script>
     </body>
 </html>

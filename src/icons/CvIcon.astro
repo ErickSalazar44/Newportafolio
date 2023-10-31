@@ -7,7 +7,10 @@ interface Props {
 const { hoverColor, ruta } = Astro.props;
 ---
 
-<a href={ruta} download class="text-text4 dark:text-textDark2">
+<a 
+    href={ruta} 
+    download 
+    class="text-text4 dark:text-textDark2 relative transition z-50 sm:before:hidden sm:before:text-white sm:before:px-3 sm:before:py-2 sm:before:rounded-lg sm:before:text-xs sm:before:font-DmSans sm:hover:before:block sm:before:absolute sm:before:content-['Descargar_CV'] sm:before:-bottom-12 sm:before:-left-2 sm:before:min-w-max sm:before:bg-[#242424]">
     <svg
         class={`hover:${hoverColor} transition-colors p-1`}
         width='44'
