@@ -1,20 +1,21 @@
-import { type ProyectosType } from '../types/types';
+import { type ProyectosType } from '../types/types'
 
 export const proyectos: ProyectosType[] = [
     {
         img: '/img/aluraflix.webp',
         imgs: ['/img/aluraflix3.png', '/img/aluraflix2.webp'],
         fecha: '19/10',
-        title: 'Alura Flix',
+        title: 'Flix',
         id: '1',
-        ruta: 'https://aluraflix-ericksalazar.netlify.app/#/',
+        ruta: 'https://flix-app-kappa.vercel.app',
         tipo: 'Desarrollo Web',
         completado: '2023',
         compañia: 'Oracle Next Education',
         cliente: 'Dev',
         rol: 'Front-end Dev',
-        resumen: 'Alura Flix es el proyecto final del programa Oracle Next Education, en el cual se busca aplicar todo lo aprendido. En este proyecto, me enfoqué en crear una plataforma de streaming.',
-        tecnologias: 'React - JavaScript - Redux - React-router-dom - HTML - CSS'
+        resumen:
+            'Flix es el proyecto final del programa Oracle Next Education, en el cual se busca aplicar todo lo aprendido. En este proyecto, me enfoqué en crear una plataforma de streaming.',
+        tecnologias: 'React - TypeScript - Zustand - Next.js - Tailwind',
     },
     {
         img: '/img/spotify.png',
@@ -28,12 +29,13 @@ export const proyectos: ProyectosType[] = [
         compañia: 'Proyecto Personal',
         cliente: 'Dev',
         rol: 'Front-end Dev',
-        resumen: 'Maquetación de una plataforma de música inspirada en Spotify, destacando por sus transiciones fluidas y experiencia inmersiva. Desarrollado con tecnologías avanzadas como Astro, TypeScript, React y Zustand, este proyecto ofrece un rendimiento excepcional y una velocidad impresionante',
-        tecnologias: 'TypeScript - Astro - Zustand - Tailwind CSS - React'
+        resumen:
+            'Maquetación de una plataforma de música inspirada en Spotify, destacando por sus transiciones fluidas y experiencia inmersiva. Desarrollado con tecnologías avanzadas como Astro, TypeScript, React y Zustand, este proyecto ofrece un rendimiento excepcional y una velocidad impresionante',
+        tecnologias: 'TypeScript - Astro - Zustand - Tailwind CSS - React',
     },
     {
         img: '/img/tesla1.avif',
-        imgs: ['/img/tesla.avif','/img/tesla2.avif'],
+        imgs: ['/img/tesla.avif', '/img/tesla2.avif'],
         fecha: '01/09',
         title: 'Landing Tesla',
         id: '3',
@@ -43,12 +45,13 @@ export const proyectos: ProyectosType[] = [
         compañia: 'Proyecto Personal',
         cliente: 'Dev',
         rol: 'Front-end Dev',
-        resumen: 'Proyecto enfocado en la página de Tesla, en el cual realicé una réplica de la landing page de Tesla. Este proyecto me permitió explorar y aplicar diferentes tecnologías y técnicas de desarrollo web.',
-        tecnologias: 'TypeScript - Tailwind - Astro'
+        resumen:
+            'Proyecto enfocado en la página de Tesla, en el cual realicé una réplica de la landing page de Tesla. Este proyecto me permitió explorar y aplicar diferentes tecnologías y técnicas de desarrollo web.',
+        tecnologias: 'TypeScript - Tailwind - Astro',
     },
     {
         img: '/img/pokedex2.avif',
-        imgs: ['/img/pokedex.avif','/img/pokedex1.avif'],
+        imgs: ['/img/pokedex.avif', '/img/pokedex1.avif'],
         fecha: '04/05',
         title: 'Pokedex',
         id: '4',
@@ -58,8 +61,9 @@ export const proyectos: ProyectosType[] = [
         compañia: 'Proyecto Personal',
         cliente: 'Dev',
         rol: 'Front-end Dev',
-        resumen: 'Pokedex. Este proyecto me ha brindado la oportunidad de profundizar en mi conocimiento de React y Redux, así como de mejorar mis habilidades en el desarrollo web responsive.',
-        tecnologias: 'React - JavaScript - React Router DOM - Redux - CSS'
+        resumen:
+            'Pokedex. Este proyecto me ha brindado la oportunidad de profundizar en mi conocimiento de React y Redux, así como de mejorar mis habilidades en el desarrollo web responsive.',
+        tecnologias: 'React - JavaScript - React Router DOM - Redux - CSS',
     },
     {
         img: '/img/login.webp',
@@ -73,8 +77,9 @@ export const proyectos: ProyectosType[] = [
         compañia: 'Proyecto Personal',
         cliente: 'Dev',
         rol: 'Back-end Dev',
-        resumen: 'Proyecto en el cual puedes registrar usuarios en una base de datos, verificación vía email, autenticación y contraseña encriptada para mayor seguridad.',
-        tecnologias: 'Node.js - Express - Jest - PostgreSQL - Bcrypt'
+        resumen:
+            'Proyecto en el cual puedes registrar usuarios en una base de datos, verificación vía email, autenticación y contraseña encriptada para mayor seguridad.',
+        tecnologias: 'Node.js - Express - Jest - PostgreSQL - Bcrypt',
     },
     {
         img: '/img/onlineStore.webp',
@@ -88,8 +93,10 @@ export const proyectos: ProyectosType[] = [
         compañia: 'Academlo',
         cliente: 'Dev',
         rol: 'Full-Stack Dev',
-        resumen: 'E-commerce. Este proyecto full stack de comercio electrónico demuestra mi habilidad para desarrollar soluciones completas y eficientes, desde la concepción hasta la implementación.',
-        tecnologias: 'Node.js - React.js - Express - JSON Web Tokens - Bcrypt - Sequelize - Redux - PostgreSQL - Jest'
+        resumen:
+            'E-commerce. Este proyecto full stack de comercio electrónico demuestra mi habilidad para desarrollar soluciones completas y eficientes, desde la concepción hasta la implementación.',
+        tecnologias:
+            'Node.js - React.js - Express - JSON Web Tokens - Bcrypt - Sequelize - Redux - PostgreSQL - Jest',
     },
     {
         img: '/img/aluraGeek.webp',
@@ -103,7 +110,8 @@ export const proyectos: ProyectosType[] = [
         compañia: 'Alura Latam',
         cliente: 'Dev',
         rol: 'Front-end Dev',
-        resumen: 'Comercio electrónico con un enfoque en el estilo geek, en el que implementé la API viewTransition. Este proyecto formó parte del desafío de Oracle Next Education y resultó en una valiosa oportunidad para perfeccionar mis habilidades en el uso de React Router DOM y la gestión de transiciones.',
-        tecnologias: 'React - JavaScript - HTML - CSS - React Router DOM'
+        resumen:
+            'Comercio electrónico con un enfoque en el estilo geek, en el que implementé la API viewTransition. Este proyecto formó parte del desafío de Oracle Next Education y resultó en una valiosa oportunidad para perfeccionar mis habilidades en el uso de React Router DOM y la gestión de transiciones.',
+        tecnologias: 'React - JavaScript - HTML - CSS - React Router DOM',
     },
-];
+]
