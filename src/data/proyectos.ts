@@ -2,8 +2,8 @@ import { type ProyectosType } from '../types/types'
 
 export const proyectos: ProyectosType[] = [
     {
-        img: '/img/aluraflix.webp',
-        imgs: ['/img/aluraflix3.png', '/img/aluraflix2.webp'],
+        img: '/img/flix.png',
+        imgs: ['/img/flix2.png', '/img/flix3.png'],
         fecha: '19/10',
         title: 'Flix',
         id: '1',
